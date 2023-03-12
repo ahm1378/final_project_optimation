@@ -7,8 +7,7 @@ import random
 
 from genetic_improved import *
 from prepare_data import get_variables
-
-popsize= 4
+servers = ["http://10.24.27.133", "http://10.24.27.134", "http://10.24.27.135", "http://10.24.27.136" ]
 
 
 def init_pop(popsize):
@@ -31,7 +30,6 @@ def parent_selection(mute_rate, cross_rate):
 
 def survivor_selection(total_population, main_popsize, coef ):
     fitness = np.zeros(len(total_population))
-    print(len(servers))
     SizeOfVMs = len(total_population) // len(servers)
     arrays = []
     threads = []
@@ -51,10 +49,6 @@ def survivor_selection(total_population, main_popsize, coef ):
     for y in threads:
         y.join()
 
-    #     threads.append(t)
-    # for u in threads:
-    #     u.join()
-
     flatten_cost = lambda y:[x for a in y for x in flatten_cost(a)] if type(y) is list else [y]
     fitness_f = flatten_cost(fitness)
 
@@ -65,12 +59,12 @@ def survivor_selection(total_population, main_popsize, coef ):
     return new_pop, new_fitness
 
 
-iterations = 1
+iterations = 100
 
 # servers = ["192.168.0.1", "192.168.0.2", "192.168.0.3", "192.168.0.4"]
-servers = ["http://localhost:8000", "http://localhost:8000", "http://localhost:8000", "http://localhost:8000", ]
-n_pop = 4
-population = init_pop(4)
+
+n_pop = 100
+population = init_pop(n_pop)
 
 
 lock = Lock()
@@ -89,10 +83,9 @@ def request_calc(url, data, coef):
 for it in range(1):
     print("generation {} started ************************************".format(it))
     mating_poll, mu_pop_size, cross_pop_size = parent_selection(0.3, 0.5)
-    #pop_cross = crossover(pop=population, cross_size=cross_pop_size, cross_pop_index=mating_poll)
-    #pop_mut = mutation(population=population, mute_size=mu_pop_size, mute_pop_index=mating_poll)
-    #total_pop = np.concatenate((population, pop_cross, pop_mut), axis=0)
-    total_pop = population
+    pop_cross = crossover(pop=population, cross_size=cross_pop_size, cross_pop_index=mating_poll)
+    pop_mut = mutation(population=population, mute_size=mu_pop_size, mute_pop_index=mating_poll)
+    total_pop = np.concatenate((population, pop_cross, pop_mut), axis=0)
 
     new_pop, new_fitness = survivor_selection(total_population=total_pop , main_popsize=popsize , coef=it+1)
 

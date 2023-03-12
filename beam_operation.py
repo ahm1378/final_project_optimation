@@ -240,16 +240,28 @@ class ColBeam(CheckModel):
         elif (result1 > 0) and (result2 > 0):
             return -1
 
-    def col_beam_width(self, general_data,full_data):
-        col_points = self.get_columns_points(general_data=general_data)
+    def col_beam_width(self, general_data, full_data, height=55, increase = False):
+        col_points = self.get_columns_points(general_data=general_data)[0]
+        z = 0
         for cal in col_points:
-            point_1 = cal[0]
-            point_1_info = self.group_column_beam(full_data=full_data, point=point_1)
-            for elms in point_1:
-                column = elms[0]
-                beam = elms[1]
-                key_beam = beam.keys()[0]
-                ke
+            for i in range(2):
+                point_1 = cal[i]
+                point_1_info = self.group_column_beam(full_data=full_data, point=point_1)
+                for elms in point_1_info:
+                    key_col = list(elms.keys())[0]
+                    key_beam = list(elms.keys())[1]
+                    if elms[key_beam]['width'] > elms[key_col]['width']:
+                        if not increase:
+                            new_beam_width = int(elms[key_col]['width'])
+                            section_name = 'B{}X{}'.format(new_beam_width, height)
+                            z = self.etabs.FrameObj.SetSection(key_beam, section_name)
+
+                        else:
+                            new_col_width = int(elms[key_beam]['width'])
+                            col_height = elms[key_col]['height']
+                            section_name = 'C{}X{}'.format(col_height, new_col_width)
+                            z = self.etabs.FrameObj.SetSection(key_col, section_name)
+        return z
 
 
 

@@ -52,18 +52,15 @@ def final_cost(coef):
     pre.check_underneath_column(id_underneath=id_under_z)
     pre.Column_dim_checker("All Frames", delta=10)
     full_data = pre.get_full_frame_data_index_id(general_frame_data=general_data, result=full_normal_data)
-    # x= pre.col_beam_width(general_data=general_data,full_data=full_data)
-    # if x==-1:
-    #     final_penalty_list +=[1.1]
-    #     print('beams cant fix')
+    x = pre.col_beam_width(general_data=general_data, full_data=full_data)
     full_data = pre.get_full_frame_data_index_id(general_frame_data=general_data, result=full_normal_data)
     cost = structure_cost(full_data)
-    os_penalty_list = ho.os_error_beam(beams=beam_id,full_data=full_data)
-    drift_penalty_list = pre.get_story_drift_tables(unique_name=unique_names, labels=labels,flag_period=False)
-    final_penalty_list += list(drift_penalty_list)+list(os_penalty_list)
-    if len(os_penalty_list)>0:
+    os_penalty_list = ho.os_error_beam(beams=beam_id, full_data=full_data)
+    drift_penalty_list = pre.get_story_drift_tables(unique_name=unique_names, labels=labels, flag_period=False)
+    final_penalty_list += list(drift_penalty_list) + list(os_penalty_list)
+    if len(os_penalty_list) > 0:
         print("os cant fix")
-    if len(drift_penalty_list)>0:
+    if len(drift_penalty_list) > 0:
         print("drift cant fix")
     summation = 0
     # for pe in final_penalty_list:
@@ -78,6 +75,6 @@ def final_cost(coef):
     # beam_os =ho.os_error_beam(beams=beam_id)
     # if not beam_os:
     #     print("beam_os_eror")
-    final_cost = cost+cost*sum(final_penalty_list)*coef
-    return final_cost, cost, cost*summation
+    final_cost = cost + cost * sum(final_penalty_list) * coef
+    return final_cost, cost, cost * summation
 

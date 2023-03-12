@@ -14873,3 +14873,37 @@
 20 :2023-03-12 20:20:03,273 : INFO : logger : stories  get successfully
 20 :2023-03-12 20:20:22,212 : INFO : logger : stories  get successfully
 20 :2023-03-12 20:20:40,815 : INFO : logger : stories  get successfully
+20 :2023-03-12 20:21:57,597 : INFO : logger : stories  get successfully
+20 :2023-03-12 20:22:16,021 : INFO : logger : stories  get successfully
+20 :2023-03-12 20:22:35,179 : INFO : logger : stories  get successfully
+20 :2023-03-12 20:22:53,731 : INFO : logger : stories  get successfully
+20 :2023-03-12 23:37:15,738 : INFO : logger : units set to kgf_centimeter
+20 :2023-03-12 23:37:15,749 : INFO : logger : units set to kgf_centimeter
+20 :2023-03-12 23:37:15,751 : INFO : logger : frame's name get successfully
+20 :2023-03-12 23:37:51,380 : INFO : logger : units set to kgf_centimeter
+20 :2023-03-12 23:37:51,390 : INFO : logger : units set to kgf_centimeter
+20 :2023-03-12 23:37:51,393 : INFO : logger : frame's name get successfully
+20 :2023-03-12 23:40:02,199 : INFO : logger : units set to kgf_centimeter
+20 :2023-03-12 23:40:02,210 : INFO : logger : units set to kgf_centimeter
+20 :2023-03-12 23:40:02,213 : INFO : logger : frame's name get successfully
+20 :2023-03-12 23:40:57,684 : INFO : logger : stories  get successfully
+20 :2023-03-12 23:45:21,627 : INFO : logger : units set to kgf_centimeter
+20 :2023-03-12 23:45:21,647 : INFO : logger : units set to kgf_centimeter
+20 :2023-03-12 23:45:21,663 : INFO : logger : frame's name get successfully
+20 :2023-03-12 23:48:41,573 : INFO : logger : units set to kgf_centimeter
+20 :2023-03-12 23:48:41,612 : INFO : logger : units set to kgf_centimeter
+20 :2023-03-12 23:48:41,680 : INFO : logger : frame's name get successfully
+20 :2023-03-12 23:49:37,477 : INFO : logger : stories  get successfully
+20 :2023-03-12 23:51:24,796 : INFO : logger : units set to kgf_centimeter
+20 :2023-03-12 23:51:24,816 : INFO : logger : units set to kgf_centimeter
+20 :2023-03-12 23:51:24,930 : INFO : logger : frame's name get successfully
+20 :2023-03-12 23:52:03,850 : INFO : logger : units set to kgf_centimeter
+20 :2023-03-12 23:52:03,869 : INFO : logger : units set to kgf_centimeter
+20 :2023-03-12 23:52:03,979 : INFO : logger : frame's name get successfully
+20 :2023-03-12 23:56:57,880 : INFO : logger : units set to kgf_centimeter
+20 :2023-03-12 23:56:57,890 : INFO : logger : units set to kgf_centimeter
+20 :2023-03-12 23:56:57,952 : INFO : logger : frame's name get successfully
+20 :2023-03-12 23:57:42,277 : INFO : logger : stories  get successfully
+20 :2023-03-12 23:58:13,175 : INFO : logger : stories  get successfully
+20 :2023-03-12 23:58:39,523 : INFO : logger : stories  get successfully
+20 :2023-03-12 23:59:14,936 : INFO : logger : stories  get successfully
