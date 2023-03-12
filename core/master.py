@@ -7,7 +7,7 @@ import random
 
 from genetic_improved import *
 from prepare_data import get_variables
-servers = ["http://10.24.27.133", "http://10.24.27.134", "http://10.24.27.135", "http://10.24.27.136" ]
+servers = ["http://10.24.27.133:8000", "http://10.24.27.134:8000", "http://10.24.27.135:8000", "http://10.24.27.136:8000" ]
 
 
 def init_pop(popsize):
